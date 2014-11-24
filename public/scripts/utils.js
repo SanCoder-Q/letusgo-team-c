@@ -16,5 +16,15 @@ var utils = (function (){
 
     return {
         getDate: getDate
-    }
+    };
 })();
+
+Array.prototype.getElementByKey = function(value, key) {
+  if(typeof key === "string") {
+    return _.find(this, function(item){return item[key] === value;});
+  }
+};
+
+Object.defineProperties( Array.prototype, {
+  'getElementByKey': { enumerable: false}
+});
