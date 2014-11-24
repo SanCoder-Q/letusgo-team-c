@@ -9,11 +9,12 @@
   <h1>增加商品</h1>
   <form id="addForm">
     <p><span>商品名称 : </span><input required type="text" placeholder="请输入商品名称..." name="name" autofocus></p>
-    <p><span>商品数量 : </span><input required type="text" placeholder="请输入商品数量..." name="amount" type="number" min="1"></p>
-    <p><span>商品单价 : </span><input required type="text" placeholder="请输入商品单价..." name="price" type="number" min="0"></p>
+    <p><span>商品数量 : </span><input required type="number" placeholder="请输入商品数量..." name="amount" min="1"></p>
+    <p><span>商品单价 : </span><input required type="number" placeholder="请输入商品单价..." name="price" min="0"></p>
     <p><span>价格单位 : </span><input required type="text" placeholder="请输入价格单位..." name="unit"></p>
-    <p><button id="submitBtn">添加商品</button></p>
+    <p><button id="submitBtn" type="submit">添加商品</button></p>
   </form>
+
 
   <script type="text/javascript" src="../lib/jquery-2.1.1/jquery-2.1.1.js"></script>
   <script type="text/javascript" src="../lib/bootstrap-3.2.0-dist/js/bootstrap.js"></script>

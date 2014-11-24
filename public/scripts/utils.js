@@ -14,8 +14,17 @@ var utils = (function (){
         return  year + '年' + month + '月' + date + '日 ' + hour + ':' + minute + ':' + second;
     };
 
+    var serializeArraytoJson = function (serializeArray) {
+      var jsonData = {};
+      $.each(serializeArray, function (index, item) {
+        jsonData[item.name] = item.value;
+      });
+      return JSON.stringify(jsonData);
+    };
+
     return {
-        getDate: getDate
+        getDate: getDate,
+        serializeArraytoJson: serializeArraytoJson
     };
 })();
 

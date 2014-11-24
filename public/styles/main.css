@@ -1,0 +1,29 @@
+#messagebox{
+  /*display: none;*/
+  position: absolute;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 100%;
+}
+
+#messageboxOverlay {
+  width: 100%;
+  height: 100%;
+  background: #333;
+  opacity: 0.5;
+}
+
+#messageboxContent {
+  position: absolute;
+  width: 40%;
+  left: 30%;
+  top: 40%;
+  margin: auto auto;
+  background: #FFF;
+  padding: 24px;
+  text-align:center;
+  color: #000;
+  font-size: 1.75em;
+  text-shadow: 1px 1px 3px #000;
+}

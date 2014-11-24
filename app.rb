@@ -34,6 +34,18 @@ class POSApplication < Sinatra::Base
         File.open('public/views/additem.html').read
     end
 
+    post '/add' do
+      request.body.rewind  # in case someone already read it
+      item = JSON.parse request.body.read
+      begin
+        Product.create :name => item['name'], :unit => item['unit'], :price => item['price']
+        [200, 'success'.to_json]
+      rescue NoMethodError, ActiveRecord::RecordInvalid, ActiveRecord::RecordNotUnique => e
+        puts e
+        [401, "error".to_json]
+      end
+    end
+
     get '/products' do
         begin
             products = Product.all || []
