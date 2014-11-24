@@ -2,6 +2,7 @@ $(document).ready(function () {
   var feature = (function () {
     var initItems = function () {
       if($('#item-table').length) {
+        var table = $('#item-table');
         $.ajax({
           type: "GET",
           url: "/products",
@@ -9,14 +10,15 @@ $(document).ready(function () {
           success: function(data) {
             var items = data;
             $.each(items, function (index, item) {
-              var addCart = '<button id="btn-'+index+'">加入购物车</button>';
+              var addCart = '<button class="btn btn-primary" id="btn-'+index+'">加入购物车</button>';
               var listItem = $('<tr class="itemRow">\
                                 <td>' + item.name + '</td>\
                                 <td>' + item.price + '</td>\
                                 <td>' + item.unit + '</td>\
                                 <td>' + addCart + '</td>\
                                 </tr>');
-              $('#item-table').append(listItem);
+              table.append(listItem);
+              table.fadeIn();
             });
             $('.itemRow button').click(function(event) {
               event.preventDefault();
@@ -77,7 +79,8 @@ $(document).ready(function () {
                             </div>\
                           </div>");
       $("body").append(messagebox);
-      $("#messagebox").click(function(){
+      messagebox.fadeIn();
+      messagebox.click(function(){
         $(this).fadeOut(400, function(){
           messagebox.remove();
         });
